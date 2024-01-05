@@ -48,11 +48,12 @@ void AMyGM::StartPlay()
 {
 	LogMessage(this, __FUNCTION__, __LINE__, TEXT("Start Play 실행 5초전"));
 
-//	Super::StartPlay();
+	Super::StartPlay();
 
-	FTimerManager& timerManager = GetWorld()->GetTimerManager();
-	FTimerHandle Timer;
-	timerManager.SetTimer(Timer, this, &AMyGM::CallParentStartPlay, 5.0f, false);
+	//FTimerManager& timerManager = GetWorld()->GetTimerManager();
+	//FTimerHandle Timer;
+	//timerManager.SetTimer(Timer, this, &AMyGM::CallParentStartPlay, 5.0f, false);
+	//timerManager.ClearTimer(Timer);
 }
 
 void AMyGM::CallParentStartPlay()
