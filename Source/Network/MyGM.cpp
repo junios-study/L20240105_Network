@@ -46,9 +46,21 @@ void AMyGM::PostLogin(APlayerController* NewPlayer)
 
 void AMyGM::StartPlay()
 {
+	LogMessage(this, __FUNCTION__, __LINE__, TEXT("Start Play 실행 5초전"));
+
+//	Super::StartPlay();
+
+	FTimerManager& timerManager = GetWorld()->GetTimerManager();
+	FTimerHandle Timer;
+	timerManager.SetTimer(Timer, this, &AMyGM::CallParentStartPlay, 5.0f, false);
+}
+
+void AMyGM::CallParentStartPlay()
+{
 	LogMessage(this, __FUNCTION__, __LINE__, TEXT("StartPlay 실행전"));
 
 	Super::StartPlay();
 
 	LogMessage(this, __FUNCTION__, __LINE__, TEXT("StartPlay 실행후"));
+
 }

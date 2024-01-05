@@ -16,5 +16,11 @@ class NETWORK_API AMyPC : public APlayerController
 
 public:
 	virtual void BeginPlay() override;
+
+	virtual void PostInitializeComponents() override;
+
+	virtual void PostNetInit() override;
+
+
 	
 };
